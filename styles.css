@@ -1,0 +1,123 @@
+:root {
+  --gap: 16px;
+  --bg: #ffffff;
+  --panel: #9ad100;
+  --text: #ffffff;
+  --container-padding: 20px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.wrap {
+  padding: var(--container-padding);
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Column widths (desktop) */
+.col.c1 { width: 140px; }
+.col.c2 { width: 100px; }
+.col.c3 { width: 100px; }
+.col.c4 { width: 100px; }
+.col.c5 { width: 100px; }
+.col.c6 { width: 70px; }
+
+.panel {
+  background: var(--panel);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.02) inset;
+}
+
+.panel span {
+  font-size: 12px;
+}
+
+/* Heights matching the proportions */
+.p1 { height: 680px; }
+
+.p2 { height: 320px; }
+.p3 { height: 340px; }
+
+.p4, .p5, .p6 { height: 214px; }
+
+.p7, .p8, .p9, .p10 { height: 156px; }
+
+.p11, .p12, .p13, .p14, .p15, .p16 { height: 99px; }
+
+.p17, .p18, .p19, .p20, .p21, .p22, .p23, .p24, .p25, .p26, .p27, .p28 {
+  height: 41.5px;
+  width: 150px;
+}
+
+/* =========================================== */
+/*                RESPONSIVENESS               */
+/* =========================================== */
+
+/* --- 1. Large Tablets & Small Laptops --- */
+@media (max-width: 1200px) {
+  .wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col {
+    width: auto;
+  }
+}
+
+/* --- 2. Tablets (2–3 columns layout) --- */
+@media (max-width: 900px) {
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  .col {
+    width: calc(50% - var(--gap));
+    align-items: center;
+  }
+
+  .panel {
+    width: 100%;
+  }
+}
+
+/* --- 3. Mobile (single column) --- */
+@media (max-width: 600px) {
+  .wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .panel {
+    width: 100%;
+  }
+
+  .panel span {
+    font-size: 14px;
+  }
+}
